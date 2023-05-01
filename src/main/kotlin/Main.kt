@@ -19,20 +19,39 @@ fun javaWayMain() {
 
     waiter3.constructPizza()
     println(waiter3.pizza)
-    println()
 }
 
 fun kotlinWayMain() {
     val pizza = Pizza.build {
         dough = "thick"
         sauce = "hot"
-        topping = "pepperoni"
+        topping = "pineapple"
     }
-
     println(pizza)
+    println()
+
+    val seafoodPizzaBuilder = kotlinWay.SeafoodPizzaBuilder()
+    val pepperoniPizzaBuilder = kotlinWay.PepperoniPizzaBuilder()
+    val quattroFormaggiPizzaBuilder = kotlinWay.QuattroFormaggiPizzaBuilder()
+
+    val waiter1 = kotlinWay.Waiter(seafoodPizzaBuilder)
+    val waiter2 = kotlinWay.Waiter(pepperoniPizzaBuilder)
+    val waiter3 = kotlinWay.Waiter(quattroFormaggiPizzaBuilder)
+
+    println(waiter1.constructPizza())
+    println()
+    println(waiter2.constructPizza())
+    println()
+    println(waiter3.constructPizza())
+    println()
 }
 
 fun main() {
+    println("JavaWay")
+    println()
     javaWayMain()
+    println()
+    println("KotlinWay")
+    println()
     kotlinWayMain()
 }

@@ -16,10 +16,10 @@ class Pizza (
         return "Dough: $dough\nSauce: $sauce\nTopping: $topping"
     }
 
-    class Builder {
-        var dough: String = ""
-        var sauce: String = ""
-        var topping: String = ""
+    open class Builder {
+        open var dough: String = ""
+        open var sauce: String = ""
+        open var topping: String = ""
 
         fun build() = Pizza(this)
     }
