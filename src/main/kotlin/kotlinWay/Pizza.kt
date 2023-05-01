@@ -1,9 +1,9 @@
 package kotlinWay
 
 class Pizza (
-    val dough: String,
-    val sauce: String,
-    val topping: String
+    private val dough: String,
+    private val sauce: String,
+    private val topping: String
 ) {
 
     private constructor(builder: Builder) : this(builder.dough, builder.sauce, builder.topping)
@@ -16,7 +16,7 @@ class Pizza (
         return "Dough: $dough\nSauce: $sauce\nTopping: $topping"
     }
 
-    open class Builder {
+    class Builder {
         var dough: String = ""
         var sauce: String = ""
         var topping: String = ""
